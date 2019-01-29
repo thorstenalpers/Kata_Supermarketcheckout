@@ -1,6 +1,7 @@
 using NSubstitute;
 using NUnit.Framework;
 using SupermarketCheckout.Common.Model;
+using SupermarketCheckout.Repositories.Repositories;
 using SupermarketCheckout.Services.Model;
 using System.Collections;
 
@@ -33,12 +34,7 @@ namespace SupermarketCheckout.Services.Tests.Services
 
         private SupermarketCheckout CreateSupermarketCheckout()
         {
-            return new SupermarketCheckout();
-        }
-
-        private SupermarketBasketFactory CreateSupermarketBasket()
-        {
-            return new SupermarketBasketFactory();
+            return new SupermarketCheckout(new DiscountsRepository(), new PriceRepository());
         }
     }
 }

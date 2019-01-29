@@ -13,6 +13,6 @@ namespace SupermarketCheckout.Services.Model
         /// <summary>
         /// Stores the Items and their number in a map
         /// </summary>
-        public Dictionary<EArticle, int> MapArticlesToNumber { get; set; }
+        public Dictionary<EArticle, uint> MapArticlesToNumber { get; set; }
     }
 }

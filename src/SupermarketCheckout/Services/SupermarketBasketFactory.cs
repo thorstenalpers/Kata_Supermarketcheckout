@@ -10,9 +10,9 @@ namespace SupermarketCheckout.Services
 {
     public class SupermarketBasketFactory : ISupermarketBasketFactory
     {
-        private Dictionary<EArticle, int> CreateShoppingBasket(IList<EArticle> articles)
+        private Dictionary<EArticle, uint> CreateShoppingBasket(IList<EArticle> articles)
         {
-            Dictionary<EArticle, int> shoppingBasket = new Dictionary<EArticle, int>();
+            var shoppingBasket = new Dictionary<EArticle, uint>();
             if (articles == null || !articles.Any())
                 throw new System.Exception("Cant create a shopping basket of an empty list of items");
 
@@ -32,7 +32,6 @@ namespace SupermarketCheckout.Services
 
         public Basket Create(IList<EArticle> articles)
         {
-
             return new Basket
             {
                 MapArticlesToNumber = CreateShoppingBasket(articles)
