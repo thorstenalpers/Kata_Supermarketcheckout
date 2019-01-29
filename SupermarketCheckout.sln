@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Services", "src\SupermarketCheckout\SupermarketCheckout.Services.csproj", "{3E0B2DB4-C654-4394-AE36-E020D640ABA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Services", "src\SupermarketCheckout.Services\SupermarketCheckout.Services.csproj", "{3E0B2DB4-C654-4394-AE36-E020D640ABA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B535E2CD-7B26-464A-959E-9E51CAD8FBC3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0619874E-7832-4D3C-8534-D1155B70A90D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Services.Tests", "SupermarketCheckout.Tests\SupermarketCheckout.Services.Tests.csproj", "{5A010351-A2FA-4EF3-939F-1C89A3EC6F44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Services.Tests", "tests\SupermarketCheckout.Tests\SupermarketCheckout.Services.Tests.csproj", "{5A010351-A2FA-4EF3-939F-1C89A3EC6F44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Repositories", "SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Repositories", "src\SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Common", "SupermarketCheckout.Common\SupermarketCheckout.Common.csproj", "{867365C3-B8C4-4847-B574-084705AAFE13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Common", "src\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj", "{867365C3-B8C4-4847-B574-084705AAFE13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\SupermarketCheckout\SupermarketCheckout.Services.csproj" />
-    <ProjectReference Include="..\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />
-    <ProjectReference Include="..\SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj" />
+    <ProjectReference Include="..\..\src\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />
+    <ProjectReference Include="..\..\src\SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj" />
+    <ProjectReference Include="..\..\src\SupermarketCheckout.Services\SupermarketCheckout.Services.csproj" />
   </ItemGroup>
 
 </Project>
