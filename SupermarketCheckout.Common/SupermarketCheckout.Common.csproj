@@ -4,9 +4,4 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Automapper\Profiles\" />
-    <Folder Include="DI\" />
-  </ItemGroup>
-
 </Project>

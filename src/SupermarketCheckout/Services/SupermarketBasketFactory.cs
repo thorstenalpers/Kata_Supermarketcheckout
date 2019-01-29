@@ -8,6 +8,9 @@ using System.Text;
 
 namespace SupermarketCheckout.Services
 {
+    /// <summary>
+    /// Concrete factory which creates a supermarket basket
+    /// </summary>
     public class SupermarketBasketFactory : ISupermarketBasketFactory
     {
         private Dictionary<EArticle, uint> CreateShoppingBasket(IList<EArticle> articles)
@@ -30,6 +33,7 @@ namespace SupermarketCheckout.Services
             return shoppingBasket;
         }
 
+        /// <inheritdoc />
         public Basket Create(IList<EArticle> articles)
         {
             return new Basket

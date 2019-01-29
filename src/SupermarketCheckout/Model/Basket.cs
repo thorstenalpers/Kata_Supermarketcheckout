@@ -11,7 +11,7 @@ namespace SupermarketCheckout.Services.Model
     public class Basket
     {
         /// <summary>
-        /// Stores the Items and their number in a map
+        /// Stores the articles and their counts in a map
         /// </summary>
         public Dictionary<EArticle, uint> MapArticlesToNumber { get; set; }
     }
