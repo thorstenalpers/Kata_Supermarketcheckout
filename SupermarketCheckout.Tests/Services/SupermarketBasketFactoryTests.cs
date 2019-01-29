@@ -1,5 +1,6 @@
 using NSubstitute;
 using NUnit.Framework;
+using SupermarketCheckout.Model;
 using SupermarketCheckout.Services;
 
 namespace SupermarketCheckout.Services.Tests.Services
@@ -7,21 +8,20 @@ namespace SupermarketCheckout.Services.Tests.Services
     [TestFixture]
     public class SupermarketBasketFactoryTests
     {
-        [Test]
-        public void TestMethod1()
+        [TestCase(new EArticle[] { EArticle.Apple })]
+        [TestCase(new EArticle[] { EArticle.Banana })]
+        [TestCase(new EArticle[] { EArticle.Peach })]
+        [TestCase(new EArticle[] { EArticle.Peach, EArticle.Apple, EArticle.Peach, EArticle.Banana })]
+        public void TestMethod1(EArticle[] articles)
         {
             // Arrange
-            var supermarketBasket = this.CreateSupermarketBasket();
+            var factory = new SupermarketBasketFactory();
 
             // Act
+            var supermarketBasket = factory.Create(articles);
 
             // Assert
-            Assert.Fail();
-        }
-
-        private SupermarketBasketFactory CreateSupermarketBasket()
-        {
-            return new SupermarketBasketFactory();
+            Assert.AreEqual(articles, supermarketBasket.Articles);
         }
     }
 }
