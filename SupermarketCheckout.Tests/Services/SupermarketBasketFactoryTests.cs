@@ -1,4 +1,3 @@
-using NSubstitute;
 using NUnit.Framework;
 using SupermarketCheckout.Common.Model;
 using System;
@@ -6,14 +5,21 @@ using System.Linq;
 
 namespace SupermarketCheckout.Services.Tests.Services
 {
+    /// <summary>
+    /// unit tests to create a market basket
+    /// </summary>
     [TestFixture]
     public class SupermarketBasketFactoryTests
     {
+        /// <summary>
+        /// tests the creation of a basket 
+        /// </summary>
+        /// <param name="articles">array of market articles</param>
         [TestCase(new EArticle[] { EArticle.Apple })]
         [TestCase(new EArticle[] { EArticle.Banana })]
         [TestCase(new EArticle[] { EArticle.Peach })]
         [TestCase(new EArticle[] { EArticle.Peach, EArticle.Apple, EArticle.Peach, EArticle.Banana })]
-        public void TestMethod1(EArticle[] articles)
+        public void Create_TestCases_Success(EArticle[] articles)
         {
             // Arrange
             var factory = new SupermarketBasketFactory();

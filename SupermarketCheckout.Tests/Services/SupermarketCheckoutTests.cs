@@ -1,18 +1,24 @@
-using NSubstitute;
 using NUnit.Framework;
 using SupermarketCheckout.Common.Model;
 using SupermarketCheckout.Repositories.Model;
 using SupermarketCheckout.Repositories.Repositories;
 using SupermarketCheckout.Services.Model;
-using System.Collections;
 
 namespace SupermarketCheckout.Services.Tests.Services
 {
+    /// <summary>
+    /// integration + unit tests
+    /// </summary>
     [TestFixture]
     public class SupermarketCheckoutTests
     {
         private readonly SupermarketBasketFactory _basketFactory = new SupermarketBasketFactory();
 
+        /// <summary>
+        /// integration test for the checkout
+        /// </summary>
+        /// <param name="articles">array of market articles</param>
+        /// <param name="expectedTotalPrice">expected total price including discount</param>
         [TestCase(new EArticle[] { EArticle.Apple }, 30)]
         [TestCase(new EArticle[] { EArticle.Banana }, 50)]
         [TestCase(new EArticle[] { EArticle.Peach }, 60)]
@@ -33,6 +39,17 @@ namespace SupermarketCheckout.Services.Tests.Services
             Assert.That(bill.TotalPrice, Is.EqualTo(expectedTotalPrice));
         }
 
+         /// <summary>
+         ///  unit test for the calculation
+         /// </summary>
+         /// <remarks>
+         /// the type of an article is not necessary
+         /// </remarks>
+         /// <param name="numberOfArticels">number of items / articles</param>
+         /// <param name="articlePrice">price of an item</param>
+         /// <param name="amountOfArticlesForDiscount">number of articles for the discount</param>
+         /// <param name="discountPrice">the new price a number of articles</param>
+         /// <param name="expectedPrice">the expected total price including discount</param>
         [TestCase(100, 100000, 10, 10, 100)]
         [TestCase(200, 100000, 10, 10, 200)]
         [TestCase(200, 100000, 200, 1, 1)]

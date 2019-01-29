@@ -1,7 +1,4 @@
 ﻿using SupermarketCheckout.Common.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SupermarketCheckout.Repositories.Model
 {

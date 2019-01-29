@@ -1,10 +1,8 @@
 ﻿using SupermarketCheckout.Common.Model;
 using SupermarketCheckout.Contracts;
 using SupermarketCheckout.Services.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SupermarketCheckout.Services
 {

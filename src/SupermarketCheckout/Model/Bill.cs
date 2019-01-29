@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SupermarketCheckout.Services.Model
+﻿namespace SupermarketCheckout.Services.Model
 {
     /// <summary>
     /// The Bill for a supermarket checkout

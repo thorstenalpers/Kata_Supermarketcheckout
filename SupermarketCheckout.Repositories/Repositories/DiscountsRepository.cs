@@ -1,9 +1,7 @@
 ﻿using SupermarketCheckout.Common.Model;
 using SupermarketCheckout.Repositories.Contracts;
 using SupermarketCheckout.Repositories.Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SupermarketCheckout.Repositories.Repositories
 {
