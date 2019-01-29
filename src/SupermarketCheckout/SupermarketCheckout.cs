@@ -2,7 +2,7 @@
 
 namespace SupermarketCheckout
 {
-    public class Class1
+    public class SupermarketCheckout
     {
     }
 }
