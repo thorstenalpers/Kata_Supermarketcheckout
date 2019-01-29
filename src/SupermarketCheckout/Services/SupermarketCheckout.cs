@@ -1,11 +1,14 @@
 ﻿using SupermarketCheckout.Common.Model;
 using SupermarketCheckout.Contracts;
 using SupermarketCheckout.Repositories.Contracts;
+using SupermarketCheckout.Repositories.Model;
 using SupermarketCheckout.Services.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("SupermarketCheckout.Services.Tests")]
 namespace SupermarketCheckout.Services
 {
     public class SupermarketCheckout : ISupermarketCheckout
@@ -19,16 +22,16 @@ namespace SupermarketCheckout.Services
             _priceRepository = priceRepository;
         }
 
-        internal decimal CalculatePrice(uint numberOfItems, decimal itemPrice, uint discountItemNumber, decimal discountPrice)
+        internal decimal CalculatePrice(uint numberOfItems, decimal itemPrice, ArticleDiscount articleDiscount)
         {
             decimal price = 0;
             uint currentNumberOfItems = numberOfItems;
 
             // 1st try to use the discount price for as much items as possible
-            while (discountItemNumber != 0 && currentNumberOfItems >= discountItemNumber)
+            while (articleDiscount != null && articleDiscount.NumberOfItems != 0 && currentNumberOfItems >= articleDiscount.NumberOfItems)
             {
-                price += discountPrice;
-                currentNumberOfItems -= discountItemNumber;
+                price += articleDiscount.NewPrice;
+                currentNumberOfItems -= articleDiscount.NumberOfItems;
             }
 
             // 2nd use the common single item price 
@@ -40,7 +43,6 @@ namespace SupermarketCheckout.Services
 
         public Bill CreateBill(Basket basket)
         {
-
             var discountList = _discountRepository.GetDiscountList();
             var priceList = _priceRepository.GetPriceList();
             var bill = new Bill();
@@ -55,7 +57,7 @@ namespace SupermarketCheckout.Services
                 if (itemPrice == null)
                     throw new Exception("Cant retrieve a price for an article");
 
-                bill.TotalPrice += CalculatePrice(numberOfArticles, itemPrice.Price, itemDiscount.NumberOfItems, itemDiscount.NewPrice);
+                bill.TotalPrice += CalculatePrice(numberOfArticles, itemPrice.Price, itemDiscount);
             }
             return bill;
         }
