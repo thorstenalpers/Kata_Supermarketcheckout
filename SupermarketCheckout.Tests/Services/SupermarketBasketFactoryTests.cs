@@ -1,6 +1,8 @@
 using NSubstitute;
 using NUnit.Framework;
 using SupermarketCheckout.Common.Model;
+using System;
+using System.Linq;
 
 namespace SupermarketCheckout.Services.Tests.Services
 {
@@ -19,8 +21,19 @@ namespace SupermarketCheckout.Services.Tests.Services
             // Act
             var supermarketBasket = factory.Create(articles);
 
-            // Assert
-            Assert.AreEqual(articles, supermarketBasket.Articles);
+            // Assert that the same Articles are in the basket
+            CollectionAssert.AreEqual(articles.ToHashSet(), supermarketBasket.MapArticlesToNumber.Keys);
+
+            // Assert for each item that the number is correct
+            foreach (var articleObj in Enum.GetValues(typeof(EArticle)))
+            {
+                var article = (EArticle) articleObj;
+                int expectedAmount = articles.Where(e => e == article).Count();
+                if (supermarketBasket.MapArticlesToNumber.ContainsKey(article))
+                    Assert.That(supermarketBasket.MapArticlesToNumber[article], Is.EqualTo(expectedAmount));
+
+            }
+
         }
     }
 }
