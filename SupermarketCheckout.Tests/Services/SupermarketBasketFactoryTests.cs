@@ -1,6 +1,6 @@
 using NSubstitute;
 using NUnit.Framework;
-using SupermarketCheckout.Services.Model;
+using SupermarketCheckout.Common.Model;
 
 namespace SupermarketCheckout.Services.Tests.Services
 {

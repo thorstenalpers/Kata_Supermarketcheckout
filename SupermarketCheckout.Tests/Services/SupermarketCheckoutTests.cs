@@ -1,5 +1,6 @@
 using NSubstitute;
 using NUnit.Framework;
+using SupermarketCheckout.Common.Model;
 using SupermarketCheckout.Services.Model;
 using System.Collections;
 

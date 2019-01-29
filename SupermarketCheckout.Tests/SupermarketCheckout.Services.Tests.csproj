@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\src\SupermarketCheckout\SupermarketCheckout.Services.csproj" />
     <ProjectReference Include="..\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />
+    <ProjectReference Include="..\SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

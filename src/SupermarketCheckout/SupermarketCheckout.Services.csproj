@@ -6,4 +6,9 @@
     <RootNamespace>SupermarketCheckout</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />
+    <ProjectReference Include="..\..\SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj" />
+  </ItemGroup>
+
 </Project>

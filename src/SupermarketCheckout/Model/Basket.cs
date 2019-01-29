@@ -1,8 +1,9 @@
-﻿using System;
+﻿using SupermarketCheckout.Common.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SupermarketCheckout.Model
+namespace SupermarketCheckout.Services.Model
 {
     /// <summary>
     /// Wrapper containing the articles from a customer

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SupermarketCheckout.Services.Model
+namespace SupermarketCheckout.Common.Model
 {
     /// <summary>
     /// Representation of a supermarket article

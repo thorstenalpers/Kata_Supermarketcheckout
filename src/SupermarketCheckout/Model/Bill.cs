@@ -4,7 +4,14 @@ using System.Text;
 
 namespace SupermarketCheckout.Services.Model
 {
+    /// <summary>
+    /// The Bill for a supermarket checkout
+    /// </summary>
     public class Bill
     {
+        /// <summary>
+        /// The total price for all articles
+        /// </summary>
+        public decimal TotalPrice { get; set; }
     }
 }

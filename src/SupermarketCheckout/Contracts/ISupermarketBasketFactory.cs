@@ -1,4 +1,5 @@
-﻿using SupermarketCheckout.Services.Model;
+﻿using SupermarketCheckout.Common.Model;
+using SupermarketCheckout.Services.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
