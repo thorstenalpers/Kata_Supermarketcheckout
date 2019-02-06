@@ -1,12 +1,12 @@
-﻿namespace SupermarketCheckout.Services.Model
+﻿namespace SupermarketCheckout.API.V1.Models
 {
     /// <summary>
-    /// The Bill for a supermarket checkout
+    /// The bill for the checkout
     /// </summary>
     public class Bill
     {
         /// <summary>
-        /// The total price for all articles
+        /// The price to pay
         /// </summary>
         public decimal TotalPrice { get; set; }
     }

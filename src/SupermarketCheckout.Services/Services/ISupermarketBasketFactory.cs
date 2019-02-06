@@ -1,9 +1,8 @@
-﻿using SupermarketCheckout.Common.Model;
-using SupermarketCheckout.Services.Model;
-using System.Collections.Generic;
-
-namespace SupermarketCheckout.Contracts
+﻿namespace SupermarketCheckout.BusinessLogic.Services
 {
+    using SupermarketCheckout.BusinessLogic.Models;
+    using System.Collections.Generic;
+    
     /// <summary>
     /// Factory creates a Basket
     /// </summary>

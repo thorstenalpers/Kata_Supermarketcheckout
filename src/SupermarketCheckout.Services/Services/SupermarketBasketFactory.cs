@@ -1,11 +1,9 @@
-﻿using SupermarketCheckout.Common.Model;
-using SupermarketCheckout.Contracts;
-using SupermarketCheckout.Services.Model;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace SupermarketCheckout.Services
+﻿namespace SupermarketCheckout.BusinessLogic.Services
 {
+    using SupermarketCheckout.BusinessLogic.Models;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Concrete factory which creates a supermarket basket
     /// </summary>
@@ -36,7 +34,7 @@ namespace SupermarketCheckout.Services
         {
             return new Basket
             {
-                MapArticlesToNumber = CreateShoppingBasket(articles)
+                MapArticlesToCount = CreateShoppingBasket(articles)
             };
         }
     }

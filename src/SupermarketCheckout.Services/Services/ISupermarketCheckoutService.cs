@@ -1,11 +1,11 @@
-﻿using SupermarketCheckout.Services.Model;
+﻿using SupermarketCheckout.BusinessLogic.Models;
 
-namespace SupermarketCheckout.Contracts
+namespace SupermarketCheckout.BusinessLogic.Services
 {
     /// <summary>
     /// Calculates the total price from a supermarket basket
     /// </summary>
-    public interface ISupermarketCheckout
+    public interface ISupermarketCheckoutService
     {
         /// <summary>
         /// Creates a bill containing the total price

@@ -1,28 +1,29 @@
-﻿using SupermarketCheckout.Contracts;
-using SupermarketCheckout.Repositories.Contracts;
-using SupermarketCheckout.Repositories.Model;
-using SupermarketCheckout.Services.Model;
-using System;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("SupermarketCheckout.Services.Tests")]
-namespace SupermarketCheckout.Services
+[assembly: InternalsVisibleTo("SupermarketCheckout.BusinessLogic.Tests")]
+namespace SupermarketCheckout.BusinessLogic.Services
 {
+    using AutoMapper;
+    using SupermarketCheckout.BusinessLogic.Models;
+    using SupermarketCheckout.DataAccess.Models;
+    using SupermarketCheckout.DataAccess.Repositories;
+    using System;
+    using System.Linq;
+
     /// <summary>
     /// Concrete implementation of a supermarket checkout 
     /// </summary>
-    public class SupermarketCheckout : ISupermarketCheckout
+    public class SupermarketCheckoutService : ISupermarketCheckoutService
     {
-        private readonly IDiscountRepository _discountRepository;
-        private readonly IPriceRepository _priceRepository;
+        readonly IDiscountRepository _discountRepository;
+        readonly IPriceRepository _priceRepository;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="discountRepository">it holds the discount information about an article</param>
         /// <param name="priceRepository">it holds the single price of an article</param>
-        public SupermarketCheckout(IDiscountRepository discountRepository, IPriceRepository priceRepository)
+        public SupermarketCheckoutService(IDiscountRepository discountRepository, IPriceRepository priceRepository)
         {
             _discountRepository = discountRepository;
             _priceRepository = priceRepository;
@@ -35,13 +36,15 @@ namespace SupermarketCheckout.Services
             var priceList = _priceRepository.GetPriceList();
             var bill = new Bill();
 
-            foreach (var item in basket.MapArticlesToNumber)
+            if (basket == null || basket.MapArticlesToCount == null || !basket.MapArticlesToCount.Any()) return bill;
+
+            foreach (var item in basket.MapArticlesToCount)
             {
                 var article = item.Key;
                 var numberOfArticles = item.Value;
 
-                var itemDiscount = discountList.FirstOrDefault(e => e.Article == article);
-                var itemPrice = priceList.FirstOrDefault(e => e.Article == article);
+                var itemDiscount = discountList.FirstOrDefault(e => Mapper.Map<Models.EArticle>(e.Article) == article);
+                var itemPrice = priceList.FirstOrDefault(e => Mapper.Map<Models.EArticle>(e.Article) == article);
                 if (itemPrice == null)
                     throw new Exception("Cant retrieve a price for an article");
 

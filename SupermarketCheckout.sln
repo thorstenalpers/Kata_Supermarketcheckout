@@ -7,27 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B535E2CD-7B2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0619874E-7832-4D3C-8534-D1155B70A90D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Services", "src\SupermarketCheckout.Services\SupermarketCheckout.Services.csproj", "{3E0B2DB4-C654-4394-AE36-E020D640ABA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.BusinessLogic", "src\SupermarketCheckout.Services\SupermarketCheckout.BusinessLogic.csproj", "{3E0B2DB4-C654-4394-AE36-E020D640ABA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Services.Tests", "tests\SupermarketCheckout.Services.Tests\SupermarketCheckout.Services.Tests.csproj", "{5A010351-A2FA-4EF3-939F-1C89A3EC6F44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.BusinessLogic.Tests", "tests\SupermarketCheckout.Services.Tests\SupermarketCheckout.BusinessLogic.Tests.csproj", "{5A010351-A2FA-4EF3-939F-1C89A3EC6F44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Repositories", "src\SupermarketCheckout.Repositories\SupermarketCheckout.Repositories.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Common", "src\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj", "{867365C3-B8C4-4847-B574-084705AAFE13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess", "src\SupermarketCheckout.Repositories\SupermarketCheckout.DataAccess.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.API", "src\SupermarketCheckout.API\SupermarketCheckout.API.csproj", "{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. API", "1. API", "{40364218-D1C3-4CD6-91FD-4FB1986B4B6B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Services", "2. Services", "{F65040ED-6476-4283-9183-A01BE073EEAD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Repositories", "3. Repositories", "{3F54EE89-3A20-453E-93D1-12FE57F9B543}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE5B95C0-F796-4CB8-B8E2-A6B4233F0348}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.API.Tests", "tests\SupermarketCheckout.API.Tests\SupermarketCheckout.API.Tests.csproj", "{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Repositories.Tests", "tests\SupermarketCheckout.Repositories.Tests\SupermarketCheckout.Repositories.Tests.csproj", "{25D63828-4640-45DB-946C-7009A49AB45A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess.Tests", "tests\SupermarketCheckout.Repositories.Tests\SupermarketCheckout.DataAccess.Tests.csproj", "{25D63828-4640-45DB-946C-7009A49AB45A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B347BEC1-5FEE-447A-AE54-1BA852625C79}"
 	ProjectSection(SolutionItems) = preProject
@@ -52,10 +42,6 @@ Global
 		{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{867365C3-B8C4-4847-B574-084705AAFE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{867365C3-B8C4-4847-B574-084705AAFE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{867365C3-B8C4-4847-B574-084705AAFE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{867365C3-B8C4-4847-B574-084705AAFE13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,15 +59,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3E0B2DB4-C654-4394-AE36-E020D640ABA6} = {F65040ED-6476-4283-9183-A01BE073EEAD}
+		{3E0B2DB4-C654-4394-AE36-E020D640ABA6} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
 		{5A010351-A2FA-4EF3-939F-1C89A3EC6F44} = {0619874E-7832-4D3C-8534-D1155B70A90D}
-		{BC6EC231-2020-40BD-88F0-DCA8238F4EB8} = {3F54EE89-3A20-453E-93D1-12FE57F9B543}
-		{867365C3-B8C4-4847-B574-084705AAFE13} = {CE5B95C0-F796-4CB8-B8E2-A6B4233F0348}
-		{A9728979-2E50-4C92-86F3-CD5EAD45ED4E} = {40364218-D1C3-4CD6-91FD-4FB1986B4B6B}
-		{40364218-D1C3-4CD6-91FD-4FB1986B4B6B} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
-		{F65040ED-6476-4283-9183-A01BE073EEAD} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
-		{3F54EE89-3A20-453E-93D1-12FE57F9B543} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
-		{CE5B95C0-F796-4CB8-B8E2-A6B4233F0348} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
+		{BC6EC231-2020-40BD-88F0-DCA8238F4EB8} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
+		{A9728979-2E50-4C92-86F3-CD5EAD45ED4E} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
 		{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E} = {0619874E-7832-4D3C-8534-D1155B70A90D}
 		{25D63828-4640-45DB-946C-7009A49AB45A} = {0619874E-7832-4D3C-8534-D1155B70A90D}
 	EndGlobalSection

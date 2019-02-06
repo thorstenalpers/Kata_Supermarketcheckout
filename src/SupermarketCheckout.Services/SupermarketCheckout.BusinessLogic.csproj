@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>SupermarketCheckout.BusinessLogic</AssemblyName>
+    <RootNamespace>SupermarketCheckout.BusinessLogic</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SupermarketCheckout.Repositories\SupermarketCheckout.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

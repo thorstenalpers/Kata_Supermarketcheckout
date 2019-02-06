@@ -1,6 +1,5 @@
-﻿using SupermarketCheckout.Common.Model;
-
-namespace SupermarketCheckout.Repositories.Model
+﻿
+namespace SupermarketCheckout.DataAccess.Models
 {
     /// <summary>
     /// A price for an item / article

@@ -1,11 +1,9 @@
-﻿using SupermarketCheckout.Common.Model;
-using SupermarketCheckout.Repositories.Contracts;
-using SupermarketCheckout.Repositories.Model;
-using System.Collections.Generic;
-
-namespace SupermarketCheckout.Repositories.Repositories
+﻿namespace SupermarketCheckout.DataAccess.Repositories
 {
-    public class DiscountsRepository : IDiscountRepository
+    using SupermarketCheckout.DataAccess.Models;
+    using System.Collections.Generic;
+
+    public class DiscountRepository : IDiscountRepository
     {
         public IEnumerable<ArticleDiscount> GetDiscountList()
         {

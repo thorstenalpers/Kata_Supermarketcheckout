@@ -1,10 +1,7 @@
-﻿using SupermarketCheckout.Common.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SupermarketCheckout.Services.Model
+﻿namespace SupermarketCheckout.BusinessLogic.Models
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Wrapper containing the articles from a customer
     /// </summary>
@@ -13,6 +10,6 @@ namespace SupermarketCheckout.Services.Model
         /// <summary>
         /// Stores the articles and their counts in a map
         /// </summary>
-        public Dictionary<EArticle, uint> MapArticlesToNumber { get; set; }
+        public Dictionary<EArticle, uint> MapArticlesToCount { get; set; }
     }
 }

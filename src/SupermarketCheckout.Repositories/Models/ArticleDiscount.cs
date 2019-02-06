@@ -1,9 +1,4 @@
-﻿using SupermarketCheckout.Common.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SupermarketCheckout.Repositories.Model
+﻿namespace SupermarketCheckout.DataAccess.Models
 {
     /// <summary>
     /// Model holds the discount information about an article

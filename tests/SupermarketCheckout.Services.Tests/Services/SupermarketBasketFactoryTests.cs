@@ -1,10 +1,11 @@
-using NUnit.Framework;
-using SupermarketCheckout.Common.Model;
-using System;
-using System.Linq;
-
-namespace SupermarketCheckout.Services.Tests.Services
+namespace SupermarketCheckout.BusinessLogic.Tests.Services
 {
+    using NUnit.Framework;
+    using SupermarketCheckout.BusinessLogic.Models;
+    using SupermarketCheckout.BusinessLogic.Services;
+    using System;
+    using System.Linq;
+
     /// <summary>
     /// unit tests to create a market basket
     /// </summary>
@@ -28,15 +29,15 @@ namespace SupermarketCheckout.Services.Tests.Services
             var supermarketBasket = factory.Create(articles);
 
             // Assert that the same Articles are in the basket
-            CollectionAssert.AreEqual(articles.ToHashSet(), supermarketBasket.MapArticlesToNumber.Keys);
+            CollectionAssert.AreEqual(articles.ToHashSet(), supermarketBasket.MapArticlesToCount.Keys);
 
             // Assertion for each item that the amount of articles are counted correctly 
             foreach (var articleObj in Enum.GetValues(typeof(EArticle)))
             {
                 var article = (EArticle) articleObj;
                 int expectedAmount = articles.Where(e => e == article).Count();
-                if (supermarketBasket.MapArticlesToNumber.ContainsKey(article))
-                    Assert.That(supermarketBasket.MapArticlesToNumber[article], Is.EqualTo(expectedAmount));
+                if (supermarketBasket.MapArticlesToCount.ContainsKey(article))
+                    Assert.That(supermarketBasket.MapArticlesToCount[article], Is.EqualTo(expectedAmount));
             }
 
         }

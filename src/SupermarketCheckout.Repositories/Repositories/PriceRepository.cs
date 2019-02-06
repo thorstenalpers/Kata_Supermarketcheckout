@@ -1,12 +1,8 @@
-﻿using SupermarketCheckout.Common.Model;
-using SupermarketCheckout.Repositories.Contracts;
-using SupermarketCheckout.Repositories.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SupermarketCheckout.Repositories.Repositories
+﻿namespace SupermarketCheckout.DataAccess.Repositories
 {
+    using SupermarketCheckout.DataAccess.Models;
+    using System.Collections.Generic;
+
     public class PriceRepository : IPriceRepository
     {
         public IEnumerable<ArticlePrice> GetPriceList()
