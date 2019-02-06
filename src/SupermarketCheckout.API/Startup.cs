@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// Configures all dependecies of business layer services and data access layer repositories
+        /// Configures all dependencies of business layer services and data access layer repositories
         /// </summary>
         /// <param name="services"></param>
         public static void ConfigureBusinessServices(IServiceCollection services)
