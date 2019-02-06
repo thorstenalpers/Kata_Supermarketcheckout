@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B535E2CD-7B2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0619874E-7832-4D3C-8534-D1155B70A90D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.BusinessLogic", "src\SupermarketCheckout.Services\SupermarketCheckout.BusinessLogic.csproj", "{3E0B2DB4-C654-4394-AE36-E020D640ABA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.BusinessLogic", "src\SupermarketCheckout.BusinessLogic\SupermarketCheckout.BusinessLogic.csproj", "{3E0B2DB4-C654-4394-AE36-E020D640ABA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.BusinessLogic.Tests", "tests\SupermarketCheckout.Services.Tests\SupermarketCheckout.BusinessLogic.Tests.csproj", "{5A010351-A2FA-4EF3-939F-1C89A3EC6F44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.BusinessLogic.Tests", "tests\SupermarketCheckout.BusinessLogic.Tests\SupermarketCheckout.BusinessLogic.Tests.csproj", "{5A010351-A2FA-4EF3-939F-1C89A3EC6F44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess", "src\SupermarketCheckout.Repositories\SupermarketCheckout.DataAccess.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess", "src\SupermarketCheckout.DataAccess\SupermarketCheckout.DataAccess.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.API", "src\SupermarketCheckout.API\SupermarketCheckout.API.csproj", "{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.API.Tests", "tests\SupermarketCheckout.API.Tests\SupermarketCheckout.API.Tests.csproj", "{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess.Tests", "tests\SupermarketCheckout.Repositories.Tests\SupermarketCheckout.DataAccess.Tests.csproj", "{25D63828-4640-45DB-946C-7009A49AB45A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess.Tests", "tests\SupermarketCheckout.DataAccess.Tests\SupermarketCheckout.DataAccess.Tests.csproj", "{25D63828-4640-45DB-946C-7009A49AB45A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B347BEC1-5FEE-447A-AE54-1BA852625C79}"
 	ProjectSection(SolutionItems) = preProject

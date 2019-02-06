@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SupermarketCheckout.Repositories\SupermarketCheckout.DataAccess.csproj" />
+    <ProjectReference Include="..\SupermarketCheckout.DataAccess\SupermarketCheckout.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

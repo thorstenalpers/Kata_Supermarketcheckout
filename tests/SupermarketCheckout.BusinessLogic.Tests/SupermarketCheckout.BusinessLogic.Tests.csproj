@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\SupermarketCheckout.Repositories\SupermarketCheckout.DataAccess.csproj" />
-    <ProjectReference Include="..\..\src\SupermarketCheckout.Services\SupermarketCheckout.BusinessLogic.csproj" />
+    <ProjectReference Include="..\..\src\SupermarketCheckout.DataAccess\SupermarketCheckout.DataAccess.csproj" />
+    <ProjectReference Include="..\..\src\SupermarketCheckout.BusinessLogic\SupermarketCheckout.BusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>

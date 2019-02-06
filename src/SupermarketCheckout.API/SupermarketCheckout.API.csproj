@@ -23,7 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SupermarketCheckout.Services\SupermarketCheckout.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SupermarketCheckout.BusinessLogic\SupermarketCheckout.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SupermarketCheckout.DataAccess\SupermarketCheckout.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
