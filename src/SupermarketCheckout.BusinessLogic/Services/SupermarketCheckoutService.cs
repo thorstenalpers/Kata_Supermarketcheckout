@@ -30,15 +30,15 @@ namespace SupermarketCheckout.BusinessLogic.Services
         }
 
         /// <inheritdoc />
-        public Bill CreateBill(Basket basket)
+        public Bill CreateBill(ShoppingCart basket)
         {
             var discountList = _discountRepository.GetDiscountList();
             var priceList = _priceRepository.GetPriceList();
             var bill = new Bill();
 
-            if (basket == null || basket.MapArticlesToCount == null || !basket.MapArticlesToCount.Any()) return bill;
+            if (basket == null || basket.MapArticlesToAmount == null || !basket.MapArticlesToAmount.Any()) return bill;
 
-            foreach (var item in basket.MapArticlesToCount)
+            foreach (var item in basket.MapArticlesToAmount)
             {
                 var article = item.Key;
                 var numberOfArticles = item.Value;
@@ -53,21 +53,21 @@ namespace SupermarketCheckout.BusinessLogic.Services
             return bill;
         }
         
-        internal decimal CalculatePrice(uint numberOfItems, decimal itemPrice, ArticleDiscount articleDiscount)
+        internal decimal CalculatePrice(uint numberOfArticles, decimal itemPrice, ArticleDiscount articleDiscount)
         {
             decimal price = 0;
-            uint currentNumberOfItems = numberOfItems;
+            uint currentNumberOfArticles = numberOfArticles;
 
             // 1st try to use the discount price for as much items as possible
-            while (articleDiscount != null && articleDiscount.NumberOfItems != 0 && currentNumberOfItems >= articleDiscount.NumberOfItems)
+            while (articleDiscount != null && articleDiscount.NumberOfArticles != 0 && currentNumberOfArticles >= articleDiscount.NumberOfArticles)
             {
                 price += articleDiscount.NewPrice;
-                currentNumberOfItems -= articleDiscount.NumberOfItems;
+                currentNumberOfArticles -= articleDiscount.NumberOfArticles;
             }
 
             // 2nd use the common single item price 
-            if (currentNumberOfItems > 0)
-                price += currentNumberOfItems * itemPrice;
+            if (currentNumberOfArticles > 0)
+                price += currentNumberOfArticles * itemPrice;
 
             return price;
         }

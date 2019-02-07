@@ -131,7 +131,7 @@
         {
             // add business services
             services.AddTransient<ISupermarketCheckoutService, SupermarketCheckoutService>();
-            services.AddTransient<ISupermarketBasketFactory, SupermarketBasketFactory>();
+            services.AddTransient<IShoppingCartFactory, ShoppingCartFactory>();
 
             // add repositories
             services.AddTransient<IDiscountRepository, DiscountRepository>();

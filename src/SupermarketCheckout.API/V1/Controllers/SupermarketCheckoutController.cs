@@ -17,14 +17,14 @@
     public class SupermarketCheckoutController : Controller
     {
         readonly ISupermarketCheckoutService _supermarketCheckoutService;
-        readonly ISupermarketBasketFactory _supermarketBasketFactory;
+        readonly IShoppingCartFactory _supermarketBasketFactory;
 
         /// <summary>
         /// wire up dependencies
         /// </summary>
         /// <param name="supermarketCheckoutService"></param>
         /// <param name="supermarketBasketFactory"></param>
-        public SupermarketCheckoutController(ISupermarketCheckoutService supermarketCheckoutService, ISupermarketBasketFactory supermarketBasketFactory)
+        public SupermarketCheckoutController(ISupermarketCheckoutService supermarketCheckoutService, IShoppingCartFactory supermarketBasketFactory)
         {
             _supermarketCheckoutService = supermarketCheckoutService;
             _supermarketBasketFactory = supermarketBasketFactory;
@@ -39,12 +39,12 @@
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<Bill> CreateBill([FromBody] ShoppingCart cart)
+        public ActionResult<Bill> CreateBill([FromBody] ShoppingBasket cart)
         {
-            if (cart == null || cart.Items == null || !cart.Items.Any())
+            if (cart == null || cart.Articles == null || !cart.Articles.Any())
                 return StatusCode(StatusCodes.Status400BadRequest);
 
-            var basket = _supermarketBasketFactory.Create(cart.Items);
+            var basket = _supermarketBasketFactory.Create(cart.Articles);
             var bill = _supermarketCheckoutService.CreateBill(basket);
 
             if (bill != null)

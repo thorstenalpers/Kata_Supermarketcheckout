@@ -13,6 +13,6 @@
         /// </summary>
         /// <param name="baket">A basket of articles of the customer</param>
         /// <returns>A bill object</returns>
-        Bill CreateBill(Basket baket);
+        Bill CreateBill(ShoppingCart baket);
     }
 }

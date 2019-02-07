@@ -38,7 +38,7 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
             var service = CreateService();
 
             // Act
-            Bill bill = service.CreateBill(new Basket());
+            Bill bill = service.CreateBill(new ShoppingCart());
 
             // Assert
             _subDiscountRepository.Received().GetDiscountList();
@@ -70,8 +70,8 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
         /// <remarks>
         /// the type of an article is not necessary
         /// </remarks>
-        /// <param name="numberOfArticels">number of items / articles</param>
-        /// <param name="articlePrice">price of an item</param>
+        /// <param name="numberOfArticels">number of articles</param>
+        /// <param name="articlePrice">price of an article</param>
         /// <param name="amountOfArticlesForDiscount">number of articles for the discount</param>
         /// <param name="discountPrice">the new price a number of articles</param>
         /// <param name="expectedPrice">the expected total price including discount</param>
@@ -87,7 +87,7 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
             var supermarketCheckout = new SupermarketCheckoutService(new DiscountRepository(), new PriceRepository());
             var itemDiscount = new ArticleDiscount
             {
-                NumberOfItems = (uint) amountOfArticlesForDiscount,
+                NumberOfArticles = (uint) amountOfArticlesForDiscount,
                 NewPrice = (uint) discountPrice
             };
             // Act

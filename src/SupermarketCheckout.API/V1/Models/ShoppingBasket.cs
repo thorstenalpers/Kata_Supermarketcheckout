@@ -4,13 +4,13 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// Shopping Cart holds the items of articles
+    /// Shopping Basket holds an unsorted list of articles
     /// </summary>
-    public class ShoppingCart
+    public class ShoppingBasket
     {
         /// <summary>
-        /// Items in the shopping cart
+        /// Articles in the shopping basket
         /// </summary>
-        public IList<EArticle> Items{ get; set; }
+        public IList<EArticle> Articles { get; set; }
     }
 }

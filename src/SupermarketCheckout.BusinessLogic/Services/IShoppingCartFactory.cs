@@ -7,13 +7,13 @@
     /// <summary>
     /// Factory creates a Basket
     /// </summary>
-    public interface ISupermarketBasketFactory
+    public interface IShoppingCartFactory
     {
         /// <summary>
         /// Creates a Basket
         /// </summary>
         /// <param name="articles">An unsorted List of articles</param>
         /// <returns>An instance of an supermarket basket</returns>
-        Basket Create(IList<EArticle> articles);
+        ShoppingCart Create(IList<EArticle> articles);
     }
 }

@@ -11,14 +11,14 @@
             yield return new ArticleDiscount
             {
                 Article = EArticle.Apple,
-                NumberOfItems = 2,
+                NumberOfArticles = 2,
                 NewPrice = 45
             };
 
             yield return new ArticleDiscount
             {
                 Article = EArticle.Banana,
-                NumberOfItems = 3,
+                NumberOfArticles = 3,
                 NewPrice = 130
             };
         }

@@ -85,24 +85,24 @@
             <param name="operation">The operation to apply the filter to.</param>
             <param name="context">The current operation filter context.</param>
         </member>
-        <member name="T:SupermarketCheckout.API.V1.Models.ShoppingCart">
+        <member name="T:SupermarketCheckout.API.V1.Models.ShoppingBasket">
             <summary>
-            Shopping Cart holds the items of articles
+            Shopping Basket holds an unsorted list of articles
             </summary>
         </member>
-        <member name="P:SupermarketCheckout.API.V1.Models.ShoppingCart.Items">
+        <member name="P:SupermarketCheckout.API.V1.Models.ShoppingBasket.Articles">
             <summary>
-            Items in the shopping cart
+            Articles in the shopping basket
             </summary>
         </member>
-        <member name="T:SupermarketCheckout.API.V2.Models.ShoppingCart">
+        <member name="T:SupermarketCheckout.API.V2.Models.ShoppingBasket">
             <summary>
-            Shopping Cart holds the items of articles
+            Shopping Basket holds an unsorted list of articles
             </summary>
         </member>
-        <member name="P:SupermarketCheckout.API.V2.Models.ShoppingCart.Items">
+        <member name="P:SupermarketCheckout.API.V2.Models.ShoppingBasket.Articles">
             <summary>
-            Items in the shopping cart
+            Articles in the shopping basket
             </summary>
         </member>
         <member name="T:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController">
@@ -110,14 +110,14 @@
             Crates a checkout for a supermarket
             </summary>
         </member>
-        <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.ISupermarketBasketFactory)">
+        <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.IShoppingCartFactory)">
             <summary>
             wire up dependencies
             </summary>
             <param name="supermarketCheckoutService"></param>
             <param name="supermarketBasketFactory"></param>
         </member>
-        <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V1.Models.ShoppingCart)">
+        <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V1.Models.ShoppingBasket)">
             <summary>
             Creates a bill by a given shopping cart
             </summary>
@@ -129,14 +129,14 @@
             Crates a checkout for a supermarket
             </summary>
         </member>
-        <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.ISupermarketBasketFactory)">
+        <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.IShoppingCartFactory)">
             <summary>
             wire up dependencies
             </summary>
             <param name="supermarketCheckoutService"></param>
             <param name="supermarketBasketFactory"></param>
         </member>
-        <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V2.Models.ShoppingCart)">
+        <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V2.Models.ShoppingBasket)">
             <summary>
             Creates a bill by a given shopping cart
             </summary>

@@ -24,16 +24,16 @@ namespace SupermarketCheckout.API.Tests.V1.Controllers
 
             var serviceProvider = services.BuildServiceProvider();
             var supermarketCheckoutService = serviceProvider.GetRequiredService<ISupermarketCheckoutService>();
-            var supermarketBasketFactory = serviceProvider.GetRequiredService<ISupermarketBasketFactory>();
+            var supermarketBasketFactory = serviceProvider.GetRequiredService<IShoppingCartFactory>();
 
             _controller = new SupermarketCheckoutController(supermarketCheckoutService, supermarketBasketFactory);
         }
 
         [TestCaseSource("TestCaseData")]
-        public void CalculatePrice_TestCases_Ok(ShoppingCart shoppingCart, decimal expectedTotalPrice)
+        public void CalculatePrice_TestCases_Ok(ShoppingBasket ShoppingBasket, decimal expectedTotalPrice)
         {
             // Act + Arrange
-            ActionResult<Bill> response = _controller.CreateBill(shoppingCart) as ActionResult<Bill>;
+            ActionResult<Bill> response = _controller.CreateBill(ShoppingBasket) as ActionResult<Bill>;
 
             // Assert
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
@@ -48,7 +48,7 @@ namespace SupermarketCheckout.API.Tests.V1.Controllers
         public void CalculatePrice_InvalidBasket_StatusCode500()
         {
             // Act + Arrange
-            ActionResult<Bill> response = null;// _controller.CreateBill(new ShoppingCart()) as ActionResult<Bill>;
+            ActionResult<Bill> response = null;// _controller.CreateBill(new ShoppingBasket()) as ActionResult<Bill>;
 
             // Assert
             Assert.IsInstanceOf<StatusCodeResult>(response.Result);
@@ -58,13 +58,13 @@ namespace SupermarketCheckout.API.Tests.V1.Controllers
 
         public static IEnumerable<object[]> TestCaseData()
         {
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Apple } }, (decimal) 30 };
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Banana } }, (decimal) 50 };
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Peach } }, (decimal) 60 };
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Apple, EArticle.Apple } }, (decimal) 45 };
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Banana, EArticle.Banana, EArticle.Banana } }, (decimal) 130 };
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Peach, EArticle.Peach } }, (decimal) 120 };
-            yield return new object[] { new ShoppingCart { Items = new EArticle[] { EArticle.Apple, EArticle.Apple, EArticle.Banana, EArticle.Banana, EArticle.Banana, EArticle.Peach, EArticle.Peach } }, (decimal) 295 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Apple } }, (decimal) 30 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Banana } }, (decimal) 50 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Peach } }, (decimal) 60 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Apple, EArticle.Apple } }, (decimal) 45 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Banana, EArticle.Banana, EArticle.Banana } }, (decimal) 130 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Peach, EArticle.Peach } }, (decimal) 120 };
+            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Apple, EArticle.Apple, EArticle.Banana, EArticle.Banana, EArticle.Banana, EArticle.Peach, EArticle.Peach } }, (decimal) 295 };
         }
     }
 }

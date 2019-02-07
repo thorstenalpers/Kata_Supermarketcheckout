@@ -8,13 +8,13 @@
     /// <summary>
     /// Concrete factory which creates a supermarket basket
     /// </summary>
-    public class SupermarketBasketFactory : ISupermarketBasketFactory
+    public class ShoppingCartFactory : IShoppingCartFactory
     {
         private Dictionary<EArticle, uint> CreateShoppingBasket(IList<EArticle> articles)
         {
             var shoppingBasket = new Dictionary<EArticle, uint>();
             if (articles == null || !articles.Any())
-                throw new System.Exception("Cant create a shopping basket of an empty list of items");
+                throw new System.Exception("Cant create a shopping basket of an empty list of articles");
 
             foreach (var item in articles)
             {
@@ -31,11 +31,11 @@
         }
 
         /// <inheritdoc />
-        public Basket Create(IList<EArticle> articles)
+        public ShoppingCart Create(IList<EArticle> articles)
         {
-            return new Basket
+            return new ShoppingCart
             {
-                MapArticlesToCount = CreateShoppingBasket(articles)
+                MapArticlesToAmount = CreateShoppingBasket(articles)
             };
         }
     }

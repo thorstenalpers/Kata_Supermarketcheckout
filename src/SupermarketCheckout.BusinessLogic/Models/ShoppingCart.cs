@@ -6,11 +6,11 @@
     /// <summary>
     /// Wrapper containing the articles from a customer
     /// </summary>
-    public class Basket
+    public class ShoppingCart
     {
         /// <summary>
-        /// Stores the articles and their counts in a map
+        /// Holds the articles and its amount in a map
         /// </summary>
-        public Dictionary<EArticle, uint> MapArticlesToCount { get; set; }
+        public Dictionary<EArticle, uint> MapArticlesToAmount { get; set; }
     }
 }
