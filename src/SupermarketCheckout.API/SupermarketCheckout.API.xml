@@ -115,13 +115,13 @@
             wire up dependencies
             </summary>
             <param name="supermarketCheckoutService"></param>
-            <param name="supermarketBasketFactory"></param>
+            <param name="supermarketCartFactory"></param>
         </member>
         <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V1.Models.ShoppingBasket)">
             <summary>
             Creates a bill by a given shopping cart
             </summary>
-            <param name="cart"></param>
+            <param name="basket">A shopping basket</param>
             <returns></returns>
         </member>
         <member name="T:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController">
@@ -134,13 +134,13 @@
             wire up dependencies
             </summary>
             <param name="supermarketCheckoutService"></param>
-            <param name="supermarketBasketFactory"></param>
+            <param name="supermarketCartFactory"></param>
         </member>
         <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V2.Models.ShoppingBasket)">
             <summary>
             Creates a bill by a given shopping cart
             </summary>
-            <param name="cart"></param>
+            <param name="basket">A shopping basket</param>
             <returns></returns>
         </member>
     </members>

@@ -11,8 +11,8 @@
         /// <summary>
         /// Creates a bill containing the total price
         /// </summary>
-        /// <param name="baket">A basket of articles of the customer</param>
+        /// <param name="cart">A cart of articles of the customer</param>
         /// <returns>A bill object</returns>
-        Bill CreateBill(ShoppingCart baket);
+        Bill CreateBill(ShoppingCart cart);
     }
 }

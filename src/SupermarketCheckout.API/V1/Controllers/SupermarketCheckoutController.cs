@@ -17,35 +17,35 @@
     public class SupermarketCheckoutController : Controller
     {
         readonly ISupermarketCheckoutService _supermarketCheckoutService;
-        readonly IShoppingCartFactory _supermarketBasketFactory;
+        readonly IShoppingCartFactory _supermarketCartFactory;
 
         /// <summary>
         /// wire up dependencies
         /// </summary>
         /// <param name="supermarketCheckoutService"></param>
-        /// <param name="supermarketBasketFactory"></param>
-        public SupermarketCheckoutController(ISupermarketCheckoutService supermarketCheckoutService, IShoppingCartFactory supermarketBasketFactory)
+        /// <param name="supermarketCartFactory"></param>
+        public SupermarketCheckoutController(ISupermarketCheckoutService supermarketCheckoutService, IShoppingCartFactory supermarketCartFactory)
         {
             _supermarketCheckoutService = supermarketCheckoutService;
-            _supermarketBasketFactory = supermarketBasketFactory;
+            _supermarketCartFactory = supermarketCartFactory;
         }
 
         /// <summary>
         /// Creates a bill by a given shopping cart
         /// </summary>
-        /// <param name="cart"></param>
+        /// <param name="basket">A shopping basket</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<Bill> CreateBill([FromBody] ShoppingBasket cart)
+        public ActionResult<Bill> CreateBill([FromBody] ShoppingBasket basket)
         {
-            if (cart == null || cart.Articles == null || !cart.Articles.Any())
+            if (basket == null || basket.Articles == null || !basket.Articles.Any())
                 return StatusCode(StatusCodes.Status400BadRequest);
 
-            var basket = _supermarketBasketFactory.Create(cart.Articles);
-            var bill = _supermarketCheckoutService.CreateBill(basket);
+            var cart = _supermarketCartFactory.Create(basket.Articles);
+            var bill = _supermarketCheckoutService.CreateBill(cart);
 
             if (bill != null)
                 return Ok(bill);
