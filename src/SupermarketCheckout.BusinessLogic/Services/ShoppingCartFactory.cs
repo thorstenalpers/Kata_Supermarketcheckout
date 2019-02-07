@@ -2,6 +2,7 @@
 {
     using SupermarketCheckout.BusinessLogic.Models;
     using SupermarketCheckout.Common.Models;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -14,7 +15,7 @@
         {
             var shoppingBasket = new Dictionary<EArticle, uint>();
             if (articles == null || !articles.Any())
-                throw new System.Exception("Cant create a shopping basket of an empty list of articles");
+                throw new ArgumentNullException(nameof(articles), "Cant create a shopping basket of an empty list of articles");
 
             foreach (var item in articles)
             {

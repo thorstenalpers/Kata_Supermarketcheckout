@@ -4,6 +4,7 @@
 namespace SupermarketCheckout.BusinessLogic.Services
 {
     using SupermarketCheckout.BusinessLogic.Models;
+    using SupermarketCheckout.Common.Exceptions;
     using SupermarketCheckout.Common.Models;
     using SupermarketCheckout.DataAccess.Models;
     using SupermarketCheckout.DataAccess.Repositories;
@@ -30,15 +31,15 @@ namespace SupermarketCheckout.BusinessLogic.Services
         }
 
         /// <inheritdoc />
-        public Bill CreateBill(ShoppingCart basket)
+        public Bill CreateBill(ShoppingCart cart)
         {
             var discountList = _discountRepository.GetDiscountList();
             var priceList = _priceRepository.GetPriceList();
             var bill = new Bill();
 
-            if (basket == null || basket.MapArticlesToAmount == null || !basket.MapArticlesToAmount.Any()) return bill;
+            if (cart == null || cart.MapArticlesToAmount == null || !cart.MapArticlesToAmount.Any()) return bill;
 
-            foreach (var item in basket.MapArticlesToAmount)
+            foreach (var item in cart.MapArticlesToAmount)
             {
                 var article = item.Key;
                 var numberOfArticles = item.Value;
@@ -46,7 +47,7 @@ namespace SupermarketCheckout.BusinessLogic.Services
                 var itemDiscount = discountList.FirstOrDefault(e => e.Article == article);
                 var itemPrice = priceList.FirstOrDefault(e => e.Article == article);
                 if (itemPrice == null)
-                    throw new Exception("Cant retrieve a price for an article");
+                    throw new PriceNotFoundException("Cant retrieve a price for an article");
 
                 bill.TotalPrice += CalculatePrice(numberOfArticles, itemPrice.Price, itemDiscount);
             }
