@@ -2,6 +2,8 @@
 {
     using SupermarketCheckout.Common.Models;
     using System.Collections.Generic;
+    
+    #pragma warning disable CA2227
 
     /// <summary>
     /// Wrapper containing the articles from a customer

@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B347BEC1-5FEE-447A-AE54-1BA852625C79}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		SupermarketCheckout.ruleset = SupermarketCheckout.ruleset
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketCheckout.Common", "src\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj", "{9DE56BB2-1D33-44B5-B9F7-5547A76E5E39}"

@@ -6,7 +6,7 @@
     /// <summary>
     /// Application entry point of the SupermarketCheckout
     /// </summary>
-    public class Program
+    public static class Program
     {
         /// <summary>
         /// Creates and starts the web application

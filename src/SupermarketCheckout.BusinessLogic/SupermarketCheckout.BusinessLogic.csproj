@@ -4,7 +4,15 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssemblyName>SupermarketCheckout.BusinessLogic</AssemblyName>
     <RootNamespace>SupermarketCheckout.BusinessLogic</RootNamespace>
+ 	<CodeAnalysisRuleSet>..\..\SupermarketCheckout.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />

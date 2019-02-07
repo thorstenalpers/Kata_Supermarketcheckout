@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SupermarketCheckout Rule Set" Description=" " ToolsVersion="15.0">
+  <Rules AnalyzerId="System.Runtime.Analyzers" RuleNamespace="System.Runtime.Analyzers">
+    <Rule Id="CA2227" Action="Warning" />
+  </Rules>
+</RuleSet>
