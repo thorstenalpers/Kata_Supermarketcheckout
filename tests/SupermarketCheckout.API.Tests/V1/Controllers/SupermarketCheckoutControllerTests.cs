@@ -1,6 +1,5 @@
 namespace SupermarketCheckout.API.Tests.V1.Controllers
 {
-    using AutoMapper;
     using CoreAPI1.API.V1.Controllers;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
@@ -8,6 +7,7 @@ namespace SupermarketCheckout.API.Tests.V1.Controllers
     using NUnit.Framework;
     using SupermarketCheckout.API.V1.Models;
     using SupermarketCheckout.BusinessLogic.Services;
+    using SupermarketCheckout.Common.Models;
     using System.Collections.Generic;
 
     [TestFixture]
@@ -23,11 +23,10 @@ namespace SupermarketCheckout.API.Tests.V1.Controllers
             Startup.ConfigureBusinessServices(services);
 
             var serviceProvider = services.BuildServiceProvider();
-            var mapper = serviceProvider.GetRequiredService<IMapper>();
             var supermarketCheckoutService = serviceProvider.GetRequiredService<ISupermarketCheckoutService>();
             var supermarketBasketFactory = serviceProvider.GetRequiredService<ISupermarketBasketFactory>();
 
-            _controller = new SupermarketCheckoutController(supermarketCheckoutService, supermarketBasketFactory, mapper);
+            _controller = new SupermarketCheckoutController(supermarketCheckoutService, supermarketBasketFactory);
         }
 
         [TestCaseSource("TestCaseData")]

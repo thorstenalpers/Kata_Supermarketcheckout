@@ -2,11 +2,10 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Http;
-    using AutoMapper;
     using System.Linq;
     using SupermarketCheckout.API.V1.Models;
     using SupermarketCheckout.BusinessLogic.Services;
-    using System.Collections.Generic;
+    using SupermarketCheckout.Common.Models;
 
     /// <summary>
     /// Crates a checkout for a supermarket
@@ -17,20 +16,17 @@
     [Produces("application/json")]
     public class SupermarketCheckoutController : Controller
     {
-        readonly IMapper _mapper;
-        readonly ISupermarketCheckoutService _supermarketCheckout;
+        readonly ISupermarketCheckoutService _supermarketCheckoutService;
         readonly ISupermarketBasketFactory _supermarketBasketFactory;
 
         /// <summary>
         /// wire up dependencies
         /// </summary>
-        /// <param name="supermarketCheckout"></param>
+        /// <param name="supermarketCheckoutService"></param>
         /// <param name="supermarketBasketFactory"></param>
-        /// <param name="mapper"></param>
-        public SupermarketCheckoutController(ISupermarketCheckoutService supermarketCheckout, ISupermarketBasketFactory supermarketBasketFactory, IMapper mapper)
+        public SupermarketCheckoutController(ISupermarketCheckoutService supermarketCheckoutService, ISupermarketBasketFactory supermarketBasketFactory)
         {
-            _mapper = mapper;
-            _supermarketCheckout = supermarketCheckout;
+            _supermarketCheckoutService = supermarketCheckoutService;
             _supermarketBasketFactory = supermarketBasketFactory;
         }
 
@@ -48,11 +44,11 @@
             if (cart == null || cart.Items == null || !cart.Items.Any())
                 return StatusCode(StatusCodes.Status400BadRequest);
 
-            var basket = _supermarketBasketFactory.Create(Mapper.Map<IList<SupermarketCheckout.BusinessLogic.Models.EArticle>>(cart.Items));
-            var bill = _supermarketCheckout.CreateBill(basket);
+            var basket = _supermarketBasketFactory.Create(cart.Items);
+            var bill = _supermarketCheckoutService.CreateBill(basket);
 
             if (bill != null)
-                return Ok(_mapper.Map<Bill>(bill));
+                return Ok(bill);
 
             return StatusCode(StatusCodes.Status500InternalServerError);
         }

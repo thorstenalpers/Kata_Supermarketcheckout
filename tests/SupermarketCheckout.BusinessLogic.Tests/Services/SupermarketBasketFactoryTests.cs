@@ -3,6 +3,7 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
     using NUnit.Framework;
     using SupermarketCheckout.BusinessLogic.Models;
     using SupermarketCheckout.BusinessLogic.Services;
+    using SupermarketCheckout.Common.Models;
     using System;
     using System.Linq;
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SupermarketCheckout.DataAccess.Models
+﻿namespace SupermarketCheckout.Common.Models
 {
     /// <summary>
     /// Representation of a supermarket article

@@ -1,5 +1,6 @@
 ﻿namespace SupermarketCheckout.DataAccess.Repositories
 {
+    using SupermarketCheckout.Common.Models;
     using SupermarketCheckout.DataAccess.Models;
     using System.Collections.Generic;
 

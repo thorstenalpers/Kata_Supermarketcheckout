@@ -1,5 +1,7 @@
 ﻿namespace SupermarketCheckout.DataAccess.Models
 {
+    using SupermarketCheckout.Common.Models;
+
     /// <summary>
     /// Model holds the discount information about an article
     /// </summary>

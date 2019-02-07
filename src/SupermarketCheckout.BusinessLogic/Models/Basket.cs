@@ -1,5 +1,6 @@
 ﻿namespace SupermarketCheckout.BusinessLogic.Models
 {
+    using SupermarketCheckout.Common.Models;
     using System.Collections.Generic;
 
     /// <summary>

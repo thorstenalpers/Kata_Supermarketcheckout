@@ -1,7 +1,8 @@
-﻿using SupermarketCheckout.BusinessLogic.Models;
-
-namespace SupermarketCheckout.BusinessLogic.Services
+﻿namespace SupermarketCheckout.BusinessLogic.Services
 {
+    using SupermarketCheckout.BusinessLogic.Models;
+    using SupermarketCheckout.Common.Models;
+
     /// <summary>
     /// Calculates the total price from a supermarket basket
     /// </summary>

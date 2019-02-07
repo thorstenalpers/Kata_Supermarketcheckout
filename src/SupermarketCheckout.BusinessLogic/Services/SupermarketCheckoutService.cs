@@ -3,8 +3,8 @@
 [assembly: InternalsVisibleTo("SupermarketCheckout.BusinessLogic.Tests")]
 namespace SupermarketCheckout.BusinessLogic.Services
 {
-    using AutoMapper;
     using SupermarketCheckout.BusinessLogic.Models;
+    using SupermarketCheckout.Common.Models;
     using SupermarketCheckout.DataAccess.Models;
     using SupermarketCheckout.DataAccess.Repositories;
     using System;
@@ -43,8 +43,8 @@ namespace SupermarketCheckout.BusinessLogic.Services
                 var article = item.Key;
                 var numberOfArticles = item.Value;
 
-                var itemDiscount = discountList.FirstOrDefault(e => Mapper.Map<Models.EArticle>(e.Article) == article);
-                var itemPrice = priceList.FirstOrDefault(e => Mapper.Map<Models.EArticle>(e.Article) == article);
+                var itemDiscount = discountList.FirstOrDefault(e => e.Article == article);
+                var itemPrice = priceList.FirstOrDefault(e => e.Article == article);
                 if (itemPrice == null)
                     throw new Exception("Cant retrieve a price for an article");
 

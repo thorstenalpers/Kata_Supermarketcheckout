@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />
+    <ProjectReference Include="..\..\src\SupermarketCheckout.DataAccess\SupermarketCheckout.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

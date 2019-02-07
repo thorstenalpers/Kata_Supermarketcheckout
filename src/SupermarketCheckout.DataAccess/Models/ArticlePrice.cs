@@ -1,6 +1,7 @@
-﻿
-namespace SupermarketCheckout.DataAccess.Models
+﻿namespace SupermarketCheckout.DataAccess.Models
 {
+    using SupermarketCheckout.Common.Models;
+
     /// <summary>
     /// A price for an item / article
     /// </summary>

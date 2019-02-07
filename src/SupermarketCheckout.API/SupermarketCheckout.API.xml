@@ -51,7 +51,7 @@
         </member>
         <member name="M:SupermarketCheckout.API.Startup.ConfigureBusinessServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
-            Configures all dependecies of business layer services and data access layer repositories
+            Configures all dependencies of business layer services and data access layer repositories
             </summary>
             <param name="services"></param>
         </member>
@@ -85,36 +85,6 @@
             <param name="operation">The operation to apply the filter to.</param>
             <param name="context">The current operation filter context.</param>
         </member>
-        <member name="T:SupermarketCheckout.API.V1.Models.Bill">
-            <summary>
-            The bill for the checkout
-            </summary>
-        </member>
-        <member name="P:SupermarketCheckout.API.V1.Models.Bill.TotalPrice">
-            <summary>
-            The price to pay
-            </summary>
-        </member>
-        <member name="T:SupermarketCheckout.API.V1.Models.EArticle">
-            <summary>
-            Representation of a supermarket article
-            </summary>
-        </member>
-        <member name="F:SupermarketCheckout.API.V1.Models.EArticle.Apple">
-            <summary>
-            An apple
-            </summary>
-        </member>
-        <member name="F:SupermarketCheckout.API.V1.Models.EArticle.Banana">
-            <summary>
-            a banana
-            </summary>
-        </member>
-        <member name="F:SupermarketCheckout.API.V1.Models.EArticle.Peach">
-            <summary>
-            a peach
-            </summary>
-        </member>
         <member name="T:SupermarketCheckout.API.V1.Models.ShoppingCart">
             <summary>
             Shopping Cart holds the items of articles
@@ -123,36 +93,6 @@
         <member name="P:SupermarketCheckout.API.V1.Models.ShoppingCart.Items">
             <summary>
             Items in the shopping cart
-            </summary>
-        </member>
-        <member name="T:SupermarketCheckout.API.V2.Models.Bill">
-            <summary>
-            The bill for the checkout
-            </summary>
-        </member>
-        <member name="P:SupermarketCheckout.API.V2.Models.Bill.TotalPrice">
-            <summary>
-            The price to pay
-            </summary>
-        </member>
-        <member name="T:SupermarketCheckout.API.V2.Models.EArticle">
-            <summary>
-            Representation of a supermarket article
-            </summary>
-        </member>
-        <member name="F:SupermarketCheckout.API.V2.Models.EArticle.Apple">
-            <summary>
-            An apple
-            </summary>
-        </member>
-        <member name="F:SupermarketCheckout.API.V2.Models.EArticle.Banana">
-            <summary>
-            a banana
-            </summary>
-        </member>
-        <member name="F:SupermarketCheckout.API.V2.Models.EArticle.Peach">
-            <summary>
-            a peach
             </summary>
         </member>
         <member name="T:SupermarketCheckout.API.V2.Models.ShoppingCart">
@@ -170,13 +110,12 @@
             Crates a checkout for a supermarket
             </summary>
         </member>
-        <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.ISupermarketBasketFactory,AutoMapper.IMapper)">
+        <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.ISupermarketBasketFactory)">
             <summary>
             wire up dependencies
             </summary>
-            <param name="supermarketCheckout"></param>
+            <param name="supermarketCheckoutService"></param>
             <param name="supermarketBasketFactory"></param>
-            <param name="mapper"></param>
         </member>
         <member name="M:CoreAPI1.API.V1.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V1.Models.ShoppingCart)">
             <summary>
@@ -190,13 +129,12 @@
             Crates a checkout for a supermarket
             </summary>
         </member>
-        <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.ISupermarketBasketFactory,AutoMapper.IMapper)">
+        <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,SupermarketCheckout.BusinessLogic.Services.ISupermarketBasketFactory)">
             <summary>
             wire up dependencies
             </summary>
-            <param name="supermarketCheckout"></param>
+            <param name="supermarketCheckoutService"></param>
             <param name="supermarketBasketFactory"></param>
-            <param name="mapper"></param>
         </member>
         <member name="M:CoreAPI1.API.V2.Controllers.SupermarketCheckoutController.CreateBill(SupermarketCheckout.API.V2.Models.ShoppingCart)">
             <summary>

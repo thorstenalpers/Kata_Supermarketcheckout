@@ -1,5 +1,6 @@
 ﻿namespace SupermarketCheckout.API.V2.Models
 {
+    using SupermarketCheckout.Common.Models;
     using System.Collections.Generic;
 
     /// <summary>

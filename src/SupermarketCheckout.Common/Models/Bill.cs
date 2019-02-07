@@ -1,4 +1,4 @@
-﻿namespace SupermarketCheckout.API.V1.Models
+﻿namespace SupermarketCheckout.Common.Models
 {
     /// <summary>
     /// The bill for the checkout
