@@ -37,14 +37,14 @@
 
         static Info CreateInfoForApiVersion(ApiVersionDescription description)
         {
-            var info = new Info()
+            var info = new Info
             {
                 Title = "Sample API",
                 Version = description.ApiVersion.ToString(),
-                Description = "A sample application with Swagger, Swashbuckle, and API versioning.",
-                Contact = new Contact() { Name = "Bill Mei", Email = "bill.mei@somewhere.com" },
-                TermsOfService = "Shareware",
-                License = new License() { Name = "MIT", Url = "https://opensource.org/licenses/MIT" }
+                Description = "A sample supermarket checkout microservice with Swagger, Swashbuckle, and API versioning.",
+                Contact = new Contact { Name = "Foo Bar", Email = "todo@foo.bar" },
+                TermsOfService = "Freeware",
+                License = new License { Name = "MIT", Url = "https://opensource.org/licenses/MIT" }
             };
 
             if (description.IsDeprecated)
