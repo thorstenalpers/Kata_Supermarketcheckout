@@ -77,6 +77,8 @@
 
                     // integrate xml comments
                     options.IncludeXmlComments(XmlCommentsFilePath);
+
+                    options.DescribeAllEnumsAsStrings();
                 });
         }
 
