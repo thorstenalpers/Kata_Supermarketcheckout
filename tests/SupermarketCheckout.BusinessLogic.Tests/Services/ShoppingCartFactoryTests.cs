@@ -16,11 +16,11 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
         /// tests the creation of a basket 
         /// </summary>
         /// <param name="articles">array of market articles</param>
-        [TestCase(new EArticle[] { EArticle.Apple })]
-        [TestCase(new EArticle[] { EArticle.Banana })]
-        [TestCase(new EArticle[] { EArticle.Peach })]
-        [TestCase(new EArticle[] { EArticle.Peach, EArticle.Apple, EArticle.Peach, EArticle.Banana })]
-        public void Create_TestCases_Success(EArticle[] articles)
+        [TestCase(new Article[] { Article.Apple })]
+        [TestCase(new Article[] { Article.Banana })]
+        [TestCase(new Article[] { Article.Peach })]
+        [TestCase(new Article[] { Article.Peach, Article.Apple, Article.Peach, Article.Banana })]
+        public void Create_TestCases_Success(Article[] articles)
         {
             // Arrange
             var factory = new ShoppingCartFactory();
@@ -32,9 +32,9 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
             CollectionAssert.AreEqual(articles.ToHashSet(), supermarketBasket.MapArticlesToAmount.Keys);
 
             // Assertion for each item that the amount of articles are counted correctly 
-            foreach (var articleObj in Enum.GetValues(typeof(EArticle)))
+            foreach (var articleObj in Enum.GetValues(typeof(Article)))
             {
-                var article = (EArticle) articleObj;
+                var article = (Article) articleObj;
                 int expectedAmount = articles.Where(e => e == article).Count();
                 if (supermarketBasket.MapArticlesToAmount.ContainsKey(article))
                     Assert.That(supermarketBasket.MapArticlesToAmount[article], Is.EqualTo(expectedAmount));

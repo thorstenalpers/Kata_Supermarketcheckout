@@ -1,9 +1,9 @@
 ﻿namespace SupermarketCheckout.Common.Models
 {
     /// <summary>
-    /// Representation of a supermarket article
+    /// Representation of a supermarket ar
     /// </summary>
-    public enum EArticle
+    public enum Article
     {
         /// <summary>
         /// An apple

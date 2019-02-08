@@ -13,6 +13,6 @@
         /// <summary>
         /// Holds the articles and its amount in a map
         /// </summary>
-        public Dictionary<EArticle, uint> MapArticlesToAmount { get; set; }
+        public Dictionary<Article, uint> MapArticlesToAmount { get; set; }
     }
 }

@@ -13,6 +13,6 @@
         /// <summary>
         /// Articles in the shopping basket
         /// </summary>
-        public IList<EArticle> Articles { get; set; }
+        public IList<Article> Articles { get; set; }
     }
 }

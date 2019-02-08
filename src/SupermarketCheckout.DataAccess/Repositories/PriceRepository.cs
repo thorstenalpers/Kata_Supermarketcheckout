@@ -10,17 +10,17 @@
         {
             yield return new ArticlePrice
             {
-                Article = EArticle.Apple,
+                Article = Article.Apple,
                 Price = 30
             };
             yield return new ArticlePrice
             {
-                Article = EArticle.Banana,
+                Article = Article.Banana,
                 Price = 50
             };
             yield return new ArticlePrice
             {
-                Article = EArticle.Peach,
+                Article = Article.Peach,
                 Price = 60
             };
         }

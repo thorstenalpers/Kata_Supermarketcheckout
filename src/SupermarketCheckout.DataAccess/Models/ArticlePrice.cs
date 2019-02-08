@@ -10,7 +10,7 @@
         /// <summary>
         /// Type of an item / article of a supermarket 
         /// </summary>
-        public EArticle Article { get; set; }
+        public Article Article { get; set; }
 
         /// <summary>
         /// The price of an item / article of a supermarket

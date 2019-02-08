@@ -11,9 +11,9 @@
     /// </summary>
     public class ShoppingCartFactory : IShoppingCartFactory
     {
-        private Dictionary<EArticle, uint> CreateShoppingBasket(IList<EArticle> articles)
+        private Dictionary<Article, uint> CreateShoppingBasket(IList<Article> articles)
         {
-            var shoppingBasket = new Dictionary<EArticle, uint>();
+            var shoppingBasket = new Dictionary<Article, uint>();
             if (articles == null || !articles.Any())
                 throw new ArgumentNullException(nameof(articles), "Cant create a shopping basket of an empty list of articles");
 
@@ -32,7 +32,7 @@
         }
 
         /// <inheritdoc />
-        public ShoppingCart Create(IList<EArticle> articles)
+        public ShoppingCart Create(IList<Article> articles)
         {
             return new ShoppingCart
             {

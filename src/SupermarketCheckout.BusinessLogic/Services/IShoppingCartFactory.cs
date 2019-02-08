@@ -14,6 +14,6 @@
         /// </summary>
         /// <param name="articles">An unsorted List of articles</param>
         /// <returns>An instance of an supermarket basket</returns>
-        ShoppingCart Create(IList<EArticle> articles);
+        ShoppingCart Create(IList<Article> articles);
     }
 }

@@ -16,7 +16,7 @@
         /// <summary>
         /// supermarket article
         /// </summary>
-        public EArticle Article { get; set; }
+        public Article Article { get; set; }
 
         /// <summary>
         /// exact number of articles to get the NewPrice  

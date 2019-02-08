@@ -58,13 +58,13 @@ namespace SupermarketCheckout.API.Tests.V1.Controllers
 
         public static IEnumerable<object[]> TestCaseData()
         {
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Apple } }, (decimal) 30 };
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Banana } }, (decimal) 50 };
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Peach } }, (decimal) 60 };
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Apple, EArticle.Apple } }, (decimal) 45 };
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Banana, EArticle.Banana, EArticle.Banana } }, (decimal) 130 };
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Peach, EArticle.Peach } }, (decimal) 120 };
-            yield return new object[] { new ShoppingBasket { Articles = new EArticle[] { EArticle.Apple, EArticle.Apple, EArticle.Banana, EArticle.Banana, EArticle.Banana, EArticle.Peach, EArticle.Peach } }, (decimal) 295 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Apple } }, (decimal) 30 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Banana } }, (decimal) 50 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Peach } }, (decimal) 60 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Apple, Article.Apple } }, (decimal) 45 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Banana, Article.Banana, Article.Banana } }, (decimal) 130 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Peach, Article.Peach } }, (decimal) 120 };
+            yield return new object[] { new ShoppingBasket { Articles = new Article[] { Article.Apple, Article.Apple, Article.Banana, Article.Banana, Article.Banana, Article.Peach, Article.Peach } }, (decimal) 295 };
         }
     }
 }
