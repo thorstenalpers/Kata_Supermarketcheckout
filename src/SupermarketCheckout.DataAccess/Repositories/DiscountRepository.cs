@@ -1,26 +1,15 @@
 ﻿namespace SupermarketCheckout.DataAccess.Repositories
 {
-    using SupermarketCheckout.Common.Models;
+    using Microsoft.EntityFrameworkCore;
     using SupermarketCheckout.DataAccess.Models;
-    using System.Collections.Generic;
+    using SupermarketCheckout.DataAccess.Repositories.Base;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-    public class DiscountRepository : IDiscountRepository
+    public class DiscountRepository : EfRepository<ArticleDiscount>, IDiscountRepository
     {
-        public IEnumerable<ArticleDiscount> GetDiscountList()
+        public DiscountRepository(SupermarketCheckoutContext dbContext) : base(dbContext)
         {
-            yield return new ArticleDiscount
-            {
-                Article = Article.Apple,
-                NumberOfArticles = 2,
-                NewPrice = 45
-            };
-
-            yield return new ArticleDiscount
-            {
-                Article = Article.Banana,
-                NumberOfArticles = 3,
-                NewPrice = 130
-            };
         }
     }
 }

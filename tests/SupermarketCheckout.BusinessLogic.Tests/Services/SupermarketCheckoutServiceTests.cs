@@ -1,10 +1,9 @@
 namespace SupermarketCheckout.BusinessLogic.Tests.Services
 {
+    using AutoMapper;
     using NSubstitute;
     using NUnit.Framework;
-    using SupermarketCheckout.BusinessLogic.Models;
     using SupermarketCheckout.BusinessLogic.Services;
-    using SupermarketCheckout.Common.Models;
     using SupermarketCheckout.DataAccess.Models;
     using SupermarketCheckout.DataAccess.Repositories;
 
@@ -13,59 +12,29 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
     {
         IDiscountRepository _subDiscountRepository;
         IPriceRepository _subPriceRepository;
+        IArticleRepository _subArticleRepository;
+        IMapper _mapper;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             _subDiscountRepository = Substitute.For<IDiscountRepository>();
             _subPriceRepository = Substitute.For<IPriceRepository>();
+            _subArticleRepository = Substitute.For<IArticleRepository>();
+            _mapper = Substitute.For<IMapper>();
         }
 
         SupermarketCheckoutService CreateService()
         {
             return new SupermarketCheckoutService(
                 _subDiscountRepository,
-                _subPriceRepository);
+                _subPriceRepository, 
+                _subArticleRepository,
+                _mapper);
         }
 
         /// <summary>
-        /// unit test for the checkout
-        /// </summary>
-        [Test]
-        public void CreateBill_EmptyBasket_Ok()
-        {
-            // Arrange
-            var service = CreateService();
-
-            // Act
-            Bill bill = service.CreateBill(new ShoppingCart());
-
-            // Assert
-            _subDiscountRepository.Received().GetDiscountList();
-            _subPriceRepository.Received().GetPriceList();
-            Assert.That(bill.TotalPrice, Is.EqualTo((decimal)0));
-        }
-
-        /// <summary>
-        /// unit test for the checkout
-        /// </summary>
-        [Test]
-        public void CreateBill_BasketIsNull_Ok()
-        {
-            // Arrange
-            var service = CreateService();
-
-            // Act
-            Bill bill = service.CreateBill(null);
-
-            // Assert
-            _subDiscountRepository.Received().GetDiscountList();
-            _subPriceRepository.Received().GetPriceList();
-            Assert.That(bill.TotalPrice, Is.EqualTo((decimal) 0));
-        }
-
-        /// <summary>
-        ///  integration test for the calculation
+        ///  unit test for the calculation
         /// </summary>
         /// <remarks>
         /// the type of an article is not necessary
@@ -84,14 +53,14 @@ namespace SupermarketCheckout.BusinessLogic.Tests.Services
         public void CalculatePrice_TestCases_Success(int numberOfArticels, decimal articlePrice, int amountOfArticlesForDiscount, decimal discountPrice, decimal expectedPrice)
         {
             // Arrange
-            var supermarketCheckout = new SupermarketCheckoutService(new DiscountRepository(), new PriceRepository());
+            var supermarketCheckout = new SupermarketCheckoutService(_subDiscountRepository, _subPriceRepository, _subArticleRepository, _mapper);
             var itemDiscount = new ArticleDiscount
             {
-                NumberOfArticles = (uint) amountOfArticlesForDiscount,
-                NewPrice = (uint) discountPrice
+                NumberOfArticles = amountOfArticlesForDiscount,
+                NewPrice = discountPrice
             };
             // Act
-            decimal price = supermarketCheckout.CalculatePrice((uint)numberOfArticels, articlePrice, itemDiscount);
+            decimal price = supermarketCheckout.CalculatePrice(numberOfArticels, articlePrice, itemDiscount);
 
             // Assert
             Assert.That(price, Is.EqualTo(expectedPrice));

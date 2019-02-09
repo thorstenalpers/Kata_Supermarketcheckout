@@ -3,7 +3,7 @@
     using SupermarketCheckout.DataAccess.Models;
     using SupermarketCheckout.DataAccess.Repositories.Base;
 
-    public interface IDiscountRepository : IAsyncRepository<ArticleDiscount>
+    public interface IArticleRepository : IAsyncRepository<Article>
     {
     }
 }

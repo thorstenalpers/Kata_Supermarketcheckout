@@ -1,7 +1,7 @@
 ﻿namespace SupermarketCheckout.BusinessLogic.Services
 {
     using SupermarketCheckout.BusinessLogic.Models;
-    using SupermarketCheckout.Common.Models;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Calculates the total price from a supermarket basket
@@ -11,8 +11,8 @@
         /// <summary>
         /// Creates a bill containing the total price
         /// </summary>
-        /// <param name="cart">A cart of articles of the customer</param>
+        /// <param name="basket">A basket of articles of the customer</param>
         /// <returns>A bill object</returns>
-        Bill CreateBill(ShoppingCart cart);
+        Task<BillDto> CreateBill(ShoppingBasketDto basket);
     }
 }

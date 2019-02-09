@@ -13,11 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.Busines
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess", "src\SupermarketCheckout.DataAccess\SupermarketCheckout.DataAccess.csproj", "{BC6EC231-2020-40BD-88F0-DCA8238F4EB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.API", "src\SupermarketCheckout.API\SupermarketCheckout.API.csproj", "{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.WebAPI", "src\SupermarketCheckout.WebAPI\SupermarketCheckout.WebAPI.csproj", "{A9728979-2E50-4C92-86F3-CD5EAD45ED4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.API.Tests", "tests\SupermarketCheckout.API.Tests\SupermarketCheckout.API.Tests.csproj", "{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.DataAccess.Tests", "tests\SupermarketCheckout.DataAccess.Tests\SupermarketCheckout.DataAccess.Tests.csproj", "{25D63828-4640-45DB-946C-7009A49AB45A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupermarketCheckout.WebAPI.Tests", "tests\SupermarketCheckout.WebAPI.Tests\SupermarketCheckout.WebAPI.Tests.csproj", "{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{B347BEC1-5FEE-447A-AE54-1BA852625C79}"
 	ProjectSection(SolutionItems) = preProject
@@ -53,10 +51,6 @@ Global
 		{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25D63828-4640-45DB-946C-7009A49AB45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25D63828-4640-45DB-946C-7009A49AB45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25D63828-4640-45DB-946C-7009A49AB45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25D63828-4640-45DB-946C-7009A49AB45A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DE56BB2-1D33-44B5-B9F7-5547A76E5E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DE56BB2-1D33-44B5-B9F7-5547A76E5E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DE56BB2-1D33-44B5-B9F7-5547A76E5E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,7 +65,6 @@ Global
 		{BC6EC231-2020-40BD-88F0-DCA8238F4EB8} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
 		{A9728979-2E50-4C92-86F3-CD5EAD45ED4E} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
 		{60E58E5B-8C0A-4593-974E-7EDD55C7FB6E} = {0619874E-7832-4D3C-8534-D1155B70A90D}
-		{25D63828-4640-45DB-946C-7009A49AB45A} = {0619874E-7832-4D3C-8534-D1155B70A90D}
 		{9DE56BB2-1D33-44B5-B9F7-5547A76E5E39} = {B535E2CD-7B26-464A-959E-9E51CAD8FBC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

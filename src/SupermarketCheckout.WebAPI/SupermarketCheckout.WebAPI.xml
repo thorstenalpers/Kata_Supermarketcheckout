@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SupermarketCheckout.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:SupermarketCheckout.WebAPI.Program">
+            <summary>
+            Application entry point of the SupermarketCheckout
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Program.Main(System.String[])">
+            <summary>
+            Creates and starts the web application
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Creates the IWebHostBuilder
+            </summary>
+            <param name="args">args</param>
+            <returns>IWebHostBuilder</returns>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.Startup">
+            <summary>
+            Configuration of the web application
+            <see href="https://docs.microsoft.com/de-de/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2"> </see>
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            sets the dependencies via IOC
+            </summary>
+            <param name="env">WebHosting environment </param>
+            <param name="config">WebHosting Configuration </param>
+            <param name="loggerFactory">Logger, configuration via appsettings</param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Defines a class that provides the mechanisms to configure an application's request</param>
+            <param name="provider">Defines the behavior of a provider that discovers and describes API version information
+            within an application.</param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Startup.ConfigureBusinessServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configures all dependencies of business layer services and data access layer repositories
+            </summary>
+            <param name="services"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.Swagger.ConfigureSwaggerOptions">
+            <summary>
+            Configures the Swagger generation options.
+            </summary>
+            <remarks>This allows API versioning to define a Swagger document per API version after the
+            <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider"/> service has been resolved from the service container.</remarks>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Swagger.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SupermarketCheckout.WebAPI.Swagger.ConfigureSwaggerOptions"/> class.
+            </summary>
+            <param name="provider">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider">provider</see> used to generate Swagger documents.</param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Swagger.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.Swagger.SwaggerDefaultValues">
+            <summary>
+            Represents the Swagger/Swashbuckle operation filter used to document the implicit API version parameter.
+            </summary>
+            <remarks>This <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/> is only required due to bugs in the <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator"/>.
+            Once they are fixed and published, this class can be removed.</remarks>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.Swagger.SwaggerDefaultValues.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to the specified operation using the given context.
+            </summary>
+            <param name="operation">The operation to apply the filter to.</param>
+            <param name="context">The current operation filter context.</param>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Controllers.ArticleController">
+            <summary>
+            Crates a checkout for a supermarket
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.ArticleController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketStoreService,AutoMapper.IMapper)">
+            <summary>
+            wire up dependencies
+            </summary>
+            <param name="supermarketStoreService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.ArticleController.Index">
+            <summary>
+            Get all articles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Controllers.ArticleDiscountController">
+            <summary>
+            Crates a checkout for a supermarket
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.ArticleDiscountController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketStoreService,AutoMapper.IMapper)">
+            <summary>
+            wire up dependencies
+            </summary>
+            <param name="supermarketStoreService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.ArticleDiscountController.Index">
+            <summary>
+            Get all discounts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Controllers.ArticlePriceController">
+            <summary>
+            Crates a checkout for a supermarket
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.ArticlePriceController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketStoreService,AutoMapper.IMapper)">
+            <summary>
+            wire up dependencies
+            </summary>
+            <param name="supermarketStoreService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.ArticlePriceController.Index">
+            <summary>
+            Get all article prices
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Controllers.SupermarketCheckoutController">
+            <summary>
+            Crates a checkout for a supermarket
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.SupermarketCheckoutController.#ctor(SupermarketCheckout.BusinessLogic.Services.ISupermarketCheckoutService,AutoMapper.IMapper)">
+            <summary>
+            wire up dependencies
+            </summary>
+            <param name="supermarketCheckoutService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Controllers.SupermarketCheckoutController.Index(SupermarketCheckout.WebAPI.V1.Models.ShoppingBasket)">
+            <summary>
+            Creates a bill by a given shopping cart
+            </summary>
+            <example>
+            {
+            "articles": [
+              {
+                "article": {
+                 "id": 2,
+                 "name": "Banana"
+             },
+              "numberOfArticles": 10,
+              "articleDiscount": {
+               "id": 1,
+               "article": {
+                 "id": 2,
+                 "name": "Banana"
+             },
+               "numberOfArticles": 3,
+               "newPrice": 130
+              },
+              "articlePrice": {
+                "id": 1,
+                "article": {
+                   "id": 2,
+                   "name": "Banana"
+             },
+                "unitPrice": 50
+              }
+             }
+             ]
+               }
+            </example>
+            <param name="basket">A shopping basket</param>
+            <returns></returns>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Article">
+            <summary>
+            Representation of a supermarket article
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Article.Id">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Article.Name">
+            <summary>
+            Name of the article
+            </summary>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.ArticleDiscount">
+            <summary>
+            Model holds the discount information about an article
+            </summary>
+            <example>
+            Banana costs 50 per unit, 
+            if you buy 3 you could get them for 130
+            NewPrice = 130
+            NumberOfArticles = 3
+            </example>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticleDiscount.Id">
+            <summary>
+            identifier
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticleDiscount.Article">
+            <summary>
+            supermarket article
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticleDiscount.NumberOfArticles">
+            <summary>
+            exact number of articles to get the NewPrice  
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticleDiscount.NewPrice">
+            <summary>
+            the new price for the NumberOfArticles
+            </summary>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.ArticlePrice">
+            <summary>
+            A price for an item / article
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticlePrice.Id">
+            <summary>
+            identifier
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticlePrice.Article">
+            <summary>
+            Type of an item / article of a supermarket 
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ArticlePrice.UnitPrice">
+            <summary>
+            The price of an item / article of a supermarket
+            </summary>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.AutoMapperConfig">
+            <summary>
+            The mapping configuration
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.AutoMapperConfig.RegisterMappings">
+            <summary>
+             registers all mapping profiles
+            </summary>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticleDiscountProfile">
+            <summary>
+            Provides a named configuration for maps. Naming conventions become scoped per profile.
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticleDiscountProfile.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticleDiscountProfile.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticlePriceProfile">
+            <summary>
+            Provides a named configuration for maps. Naming conventions become scoped per profile.
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticlePriceProfile.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticlePriceProfile.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticleProfile">
+            <summary>
+            Provides a named configuration for maps. Naming conventions become scoped per profile.
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticleProfile.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ArticleProfile.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.BasketItemProfile">
+            <summary>
+            Provides a named configuration for maps. Naming conventions become scoped per profile.
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.BasketItemProfile.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.BasketItemProfile.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.BillProfile">
+            <summary>
+            Provides a named configuration for maps. Naming conventions become scoped per profile.
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.BillProfile.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.BillProfile.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ShoppingBasketProfile">
+            <summary>
+            Provides a named configuration for maps. Naming conventions become scoped per profile.
+            </summary>
+        </member>
+        <member name="M:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ShoppingBasketProfile.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Automapper.Profiles.ShoppingBasketProfile.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.BasketItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.BasketItem.Article">
+            <summary>
+            the supermarket article
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.BasketItem.NumberOfArticles">
+            <summary>
+            Number of articles in the basket
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.BasketItem.ArticleDiscount">
+            <summary>
+            the discount
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.BasketItem.ArticlePrice">
+            <summary>
+            Unit price
+            </summary>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.Bill">
+            <summary>
+            The bill for the checkout
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.Bill.TotalPrice">
+            <summary>
+            The price to pay
+            </summary>
+        </member>
+        <member name="T:SupermarketCheckout.WebAPI.V1.Models.ShoppingBasket">
+            <summary>
+            Shopping Basket holds an unsorted list of articles
+            </summary>
+        </member>
+        <member name="P:SupermarketCheckout.WebAPI.V1.Models.ShoppingBasket.Articles">
+            <summary>
+            Articles in the shopping basket
+            </summary>
+        </member>
+    </members>
+</doc>
