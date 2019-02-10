@@ -37,10 +37,4 @@
     <ProjectReference Include="..\SupermarketCheckout.Common\SupermarketCheckout.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="WebApplication.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
