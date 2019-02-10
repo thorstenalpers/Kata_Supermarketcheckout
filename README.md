@@ -1,7 +1,7 @@
 
 # Coding Kata Challenge
 
-This is an implementation of a [coding Kata](https://github.com/Carnect/checkout/ "Github from Carnect") posted from Hotelbeds.com.
+This is an implementation of a [coding Kata](https://github.com/Carnect/checkout/ "Github from Carnect") posted from Carnect / Hotelbeds.com.
 
 **Core Features**:
 * A 3-layered microservice architecture, no DDD
