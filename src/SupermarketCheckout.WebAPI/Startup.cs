@@ -113,6 +113,7 @@
             {
                 // Development service configuration
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -154,7 +155,7 @@
             // add db context
             services.AddDbContext<SupermarketCheckoutContext>(options => 
             {
-                options.UseSqlite(config.GetConnectionString(nameof(SupermarketCheckoutContext)));
+                options.UseSqlServer(config.GetConnectionString(nameof(SupermarketCheckoutContext)));
                 options.UseLazyLoadingProxies();
             });
 
