@@ -7,7 +7,6 @@
     /// </summary>
     public class Article : BaseEntity
     {
-        [Required]
         public string Name { get; set; }
     }
 }

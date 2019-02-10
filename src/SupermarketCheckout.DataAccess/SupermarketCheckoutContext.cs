@@ -18,19 +18,6 @@ namespace SupermarketCheckout.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SupermarketCheckoutContext).Assembly);
-
-            modelBuilder.Entity<Article>()
-            .HasIndex(b => b.Name)
-            .IsUnique();
-
-            modelBuilder.Entity<ArticleDiscount>()
-                .HasIndex(b => b.ArticleId)
-                .IsUnique();
-
-            modelBuilder.Entity<ArticlePrice>()
-                .HasIndex(b => b.ArticleId)
-                .IsUnique();
         }
     }
-
 }

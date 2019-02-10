@@ -1,7 +1,5 @@
 ﻿namespace SupermarketCheckout.DataAccess.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
     /// <summary>
     /// Model holds the discount information about an article
     /// </summary>
@@ -18,19 +16,16 @@
         /// </summary>
         public virtual Article Article { get; set; }
 
-        [Required]
         public int ArticleId { get; set; }
 
         /// <summary>
         /// exact number of articles to get the NewPrice  
         /// </summary>
-        [Required]
         public int NumberOfArticles { get; set; }
 
         /// <summary>
         /// the new price for the NumberOfArticles
         /// </summary>
-        [Required]
         public decimal NewPrice { get; set; }
     }
 }
