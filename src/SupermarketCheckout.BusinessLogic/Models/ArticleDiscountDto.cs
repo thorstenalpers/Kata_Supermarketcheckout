@@ -35,7 +35,9 @@ namespace SupermarketCheckout.BusinessLogic.Models
             if (other == null) return false;
             return other.Article.Equals(this.Article) &&
                 other.Id == this.Id &&
-                other.NewPrice == this.NewPrice &&
+                other.NewPrice.HasValue && 
+                this.NewPrice.HasValue &&
+                Decimal.Round(other.NewPrice.Value * 100, 0) == Decimal.Round(this.NewPrice.Value * 100, 0) &&
                 other.NumberOfArticles == this.NumberOfArticles;
         }
 

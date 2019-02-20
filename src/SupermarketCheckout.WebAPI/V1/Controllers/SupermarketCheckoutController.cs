@@ -46,7 +46,7 @@
         ///  },
         ///   "numberOfArticles": 10,
         ///   "articleDiscount": {
-        ///    "id": 1,
+        ///    "id": 2,
         ///    "article": {
         ///      "id": 2,
         ///      "name": "Banana"
