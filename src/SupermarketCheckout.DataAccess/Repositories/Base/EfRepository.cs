@@ -5,8 +5,9 @@
     using System.Linq;
     using System.Threading.Tasks;
     using SupermarketCheckout.DataAccess.Models;
+    using System;
 
-    public abstract class EfRepository<T> : IRepository<T>, IAsyncRepository<T> where T : BaseEntity
+    public abstract class EfRepository<T> : IDisposable, IRepository<T>, IAsyncRepository<T> where T : BaseEntity
     {
         protected DbContext DbContext { get; set; }
 
@@ -74,5 +75,35 @@
             DbContext.Set<T>().Remove(entity);
             await DbContext.SaveChangesAsync().ConfigureAwait(false);
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    DbContext.Dispose();
+                }
+                disposedValue = true;
+            }
+        }
+
+        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        ~EfRepository()
+        {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(false);
+        }
+
+        // This code added to correctly implement the disposable pattern.
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 }
